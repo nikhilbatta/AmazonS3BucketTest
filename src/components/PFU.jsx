@@ -3,9 +3,8 @@ import ReactS3 from 'react-s3'
 
 const config = {
     bucketName: 'testerbuckettt',
-    dirName: 'photos', /* optional */
-    region: 'eu-west-1',
     accessKeyId: '',
+    region: 'us-west-2',
     secretAccessKey: '',
 }
 
@@ -16,6 +15,7 @@ class PFU extends React.Component {
     upload(e){
         var ok = new ReactS3();
         console.log(ok)
+        console.log(e.target.files[0])
         ReactS3.uploadFile(e.target.files[0], config)
         .then((data) => {
             console.log(data)
